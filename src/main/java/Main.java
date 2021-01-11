@@ -31,14 +31,14 @@ public class Main {
         try (CloseableHttpResponse response = httpClient.execute(request)) {
             ApiNasa apiNasa = mapper.readValue(response.getEntity().getContent(), ApiNasa.class);
 
-            SaveImageToFile(apiNasa.getUrl());
+            saveImageToFile(apiNasa.getUrl());
 
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static void SaveImageToFile(String url) {
+    private static void saveImageToFile(String url) {
         try (InputStream in = new URL(url).openStream()) {
             Files.copy(in, Paths.get(url.substring(38)), StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {

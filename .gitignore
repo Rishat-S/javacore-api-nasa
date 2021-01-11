@@ -36,6 +36,7 @@ buildNumber.properties
 .idea/**/dbnavigator.xml
 
 # Gradle
+.build/*
 .idea/**/gradle.xml
 .idea/**/libraries
 

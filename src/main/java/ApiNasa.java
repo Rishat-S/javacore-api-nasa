@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
+        "copyright",
         "date",
         "explanation",
         "hdurl",
@@ -13,7 +14,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "url"
 })
 public class ApiNasa {
-
+    @JsonProperty("copyright")
+    private String copyright;
     @JsonProperty("date")
     private String date;
     @JsonProperty("explanation")

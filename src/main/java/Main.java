@@ -31,7 +31,7 @@ public class Main {
         try (CloseableHttpResponse response = httpClient.execute(request)) {
             ApiNasa apiNasa = mapper.readValue(response.getEntity().getContent(), ApiNasa.class);
 
-            saveImageToFile(apiNasa.getUrl());
+            saveImageToFile(apiNasa.getHdurl());
 
         } catch (IOException e) {
             e.printStackTrace();
